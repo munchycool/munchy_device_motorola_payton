@@ -14,9 +14,9 @@
 # limitations under the License.
 #
 
-# Inherit some common Lineage stuff.
+# Liquid.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+include vendor/liquid/config/common_full_phone.mk
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
@@ -68,13 +68,14 @@ endif
 
 # Device identifiers
 PRODUCT_DEVICE := payton
-PRODUCT_NAME := lineage_payton
+PRODUCT_NAME := liquid_payton
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := Moto X4
 PRODUCT_MANUFACTURER := Motorola
 PRODUCT_RELEASE_NAME := payton
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-        PRODUCT_NAME=payton
+        PRODUCT_NAME=payton \
+        PRIVATE_BUILD_DESC="motorola-user 9.0.0 PPW29.69-26 12 release-keys"
 
-BUILD_FINGERPRINT := motorola/payton/payton:8.0.0/OPWS27.57-25-6-10/12:user/release-keys
+BUILD_FINGERPRINT := motorola/payton/payton:9.0.0/PPW29.69-26/12:user/release-keys
